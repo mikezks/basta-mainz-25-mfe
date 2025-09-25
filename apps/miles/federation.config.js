@@ -2,10 +2,10 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 
 module.exports = withNativeFederation({
 
-  name: 'miles',
+  name: 'miles-single',
 
   exposes: {
-    './component': './apps/miles/src/app/views/overview.ts',
+    './routes': './apps/miles/src/app/app.routes.ts',
   },
 
   shared: {

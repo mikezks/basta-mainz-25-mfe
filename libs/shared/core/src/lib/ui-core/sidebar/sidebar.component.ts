@@ -1,3 +1,4 @@
+import { AsyncPipe, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -51,9 +52,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </li>
 
         <li routerLinkActive="active">
-          <a routerLink="miles">
+          <a routerLink="miles-single">
             <i class="icon icon-boarding"></i>
-            <p>Miles</p>
+            <p>Miles Single</p>
+          </a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="miles-multi/overview">
+            <i class="icon icon-boarding"></i>
+            <p>Miles Multi
+            </p>
           </a>
         </li>
 

@@ -1,6 +1,7 @@
 import { loadRemoteModule } from '@angular-architects/native-federation';
 import { Routes } from '@angular/router';
 import { HomeComponent } from '@flight-demo/shared/core';
+import { fullMatchFirstSegment, loadMultiVersionMfe } from '@flight-demo/shared/federation';
 
 
 export const APP_ROUTES: Routes = [
@@ -26,8 +27,14 @@ export const APP_ROUTES: Routes = [
     loadChildren: () => import('@flight-demo/domain/boarding')
   },
   {
-    path: 'miles',
-    loadComponent: () => loadRemoteModule('miles', './component')
+    path: 'miles-single',
+    loadChildren: () => loadRemoteModule('miles-single', './routes')
+  },
+  {
+    matcher: fullMatchFirstSegment('miles-multi'),
+    loadChildren: () => loadMultiVersionMfe(
+      'miles-multi', './bootstrap', 'mfe-miles'
+    )
   },
   {
     path: '**',
